@@ -1,0 +1,12 @@
+[Unit]
+Description = The simplest ruby applicaiton running with rackup
+
+[Service]
+Environment = PATH=/opt/rubies/ruby-2.6.5/bin:usr/local/bin:usr/bin:/bin
+WorkingDirectory = /srv/roda-app
+Type = simple
+ExecStart = /opt/rubies/ruby-2.6.5/bin/bundle exec rackup -o 0.0.0.0 config.ru
+
+[Install]
+WantedBy = multi-user.target
+
